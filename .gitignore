@@ -1,0 +1,9 @@
+node_modules/
+__pycache__/
+data/
+.env
+.env.*
+*.pdf
+*_session.json
+session.json
+.DS_Store
