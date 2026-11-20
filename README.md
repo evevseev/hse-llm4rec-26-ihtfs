@@ -20,13 +20,13 @@ or profit.
 
 ## Current status
 
-Session 1: research question and study plan. A real released record and metric
-arithmetic have been checked. The recommendation model has not been implemented
-or evaluated. No ranking improvement is claimed.
+Session 2 implements a frozen 50-candidate pool, RRF, and the Qwen reranker.
+June A/B were run on 100 users each. Strict JSON validation rejected every
+fenced model response, so Qwen used the RRF fallback throughout; no improvement
+is claimed. Aggregate metrics and protocol settings are in `results/`.
 
-The plan uses one Qwen2.5-1.5B-Instruct checkpoint, an earlier development window,
-and a locked main comparison with two candidate orders. See the study plan and
-its review clarifications before implementation.
+For a fresh clone, see the [Session 2 quickstart](session2/QUICKSTART.md). The
+June reproduction path is PyTorch-only and does not require MLX.
 
 ## Materials
 
@@ -39,6 +39,8 @@ its review clarifications before implementation.
 - [Saved verification output](session1/results/independent_verification.json)
 - [Reproducibility check](session1/results/reproducibility_check.json)
 - [Analytical design checks](session1/results/design_checks.json)
+- [Session 2 quickstart](session2/QUICKSTART.md)
+- [Session 2 aggregate metrics and checks](results/session2_summary.json)
 
 To repeat the source check, download the official data separately and run:
 

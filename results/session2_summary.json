@@ -1,0 +1,138 @@
+{
+  "study": "FAR-Trans frozen candidate pool: RRF vs Qwen reranker",
+  "interpretation": "Aggregate reporting only. The primary June A/B Qwen rankings all used RRF fallback because raw replies were Markdown-fenced rather than JSON. No Qwen improvement is claimed.",
+  "settings": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "primary_backend": "PyTorch",
+    "mlx_required_for_reproduction": false,
+    "runtime_dtype": "FP16",
+    "cutoff_june": "2021-06-01",
+    "june_label_end_exclusive": "2021-07-01",
+    "candidate_tie_break": "ascending ISIN for pool construction; opaque alias for final RRF ties",
+    "decoding": {
+      "do_sample": false,
+      "num_beams": 1,
+      "max_new_tokens": 96,
+      "context_limit": 8192
+    },
+    "prompt_sha256": "2b8db1e5d624a260798c27b407d379029ece8b1b9b4139b6653279dc0d46250b",
+    "candidate_pool_size": 50,
+    "candidate_quotas": {
+      "latest_buy": 20,
+      "cbf": 20,
+      "popularity": 10
+    },
+    "rrf_k": 60,
+    "alias_seed": 2025,
+    "run_b_candidate_order_seed": 2026,
+    "history_limit": 20,
+    "empty_truth_score": 0.0,
+    "block_size": 5,
+    "fresh_process_per_block": true,
+    "software_observed": {
+      "python": "3.13.18",
+      "torch": "2.11.0",
+      "transformers": "4.57.6",
+      "device": "Apple MPS"
+    }
+  },
+  "main_results": {
+    "dev_may": {
+      "users": 100,
+      "nonempty_truth_users": 15,
+      "qwen_raw_responses": 30,
+      "qwen_invalid_json_fallbacks": 30,
+      "mps_oom_fallbacks": 70,
+      "metrics": {
+        "popularity": {"ndcg_at_10_all": 0.054888920153065165, "ndcg_at_10_nonempty": 0.3659261343537678},
+        "cbf": {"ndcg_at_10_all": 0.057689187286583815, "ndcg_at_10_nonempty": 0.3845945819105588},
+        "latest_buy": {"ndcg_at_10_all": 0.09404717801409851, "ndcg_at_10_nonempty": 0.6269811867606567},
+        "latest_buy_or_sell": {"ndcg_at_10_all": 0.09463687530257453, "ndcg_at_10_nonempty": 0.6309125020171635},
+        "rrf": {"ndcg_at_10_all": 0.0720628171417316, "ndcg_at_10_nonempty": 0.48041878094487733},
+        "qwen": {"ndcg_at_10_all": 0.0720628171417316, "ndcg_at_10_nonempty": 0.48041878094487733}
+      },
+      "qwen_equals_rrf_after_fallback": true
+    },
+    "june_a": {
+      "cutoff": "2021-06-01",
+      "label_end_exclusive": "2021-07-01",
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "valid_qwen_responses": 0,
+      "invalid_json_fallbacks": 100,
+      "metrics": {
+        "popularity": {"ndcg_at_10_all": 0.028590012799467643, "ndcg_at_10_nonempty": 0.25990920726788763},
+        "cbf": {"ndcg_at_10_all": 0.020100011736078574, "ndcg_at_10_nonempty": 0.18272737941889614},
+        "latest_buy": {"ndcg_at_10_all": 0.027722649787649066, "ndcg_at_10_nonempty": 0.2520240889786279},
+        "latest_buy_or_sell": {"ndcg_at_10_all": 0.027107048693904026, "ndcg_at_10_nonempty": 0.2464277153991275},
+        "rrf": {"ndcg_at_10_all": 0.03553592418793942, "ndcg_at_10_nonempty": 0.3230538562539947},
+        "qwen": {"ndcg_at_10_all": 0.03553592418793942, "ndcg_at_10_nonempty": 0.3230538562539947}
+      }
+    },
+    "june_b": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "valid_qwen_responses": 0,
+      "invalid_json_fallbacks": 100,
+      "metrics_identical_to_june_a": true,
+      "metrics": {
+        "popularity": {"ndcg_at_10_all": 0.028590012799467643, "ndcg_at_10_nonempty": 0.25990920726788763},
+        "cbf": {"ndcg_at_10_all": 0.020100011736078574, "ndcg_at_10_nonempty": 0.18272737941889614},
+        "latest_buy": {"ndcg_at_10_all": 0.027722649787649066, "ndcg_at_10_nonempty": 0.2520240889786279},
+        "latest_buy_or_sell": {"ndcg_at_10_all": 0.027107048693904026, "ndcg_at_10_nonempty": 0.2464277153991275},
+        "rrf": {"ndcg_at_10_all": 0.03553592418793942, "ndcg_at_10_nonempty": 0.3230538562539947},
+        "qwen": {"ndcg_at_10_all": 0.03553592418793942, "ndcg_at_10_nonempty": 0.3230538562539947}
+      }
+    }
+  },
+  "verification": {
+    "source_data_sha256": {
+      "transactions.csv": "358871fa1311a802799df86e56c3d633513566965b01412d058e0f8fbe6cd54b",
+      "asset_information.csv": "33f9897b14087068fba53a0bc9e24a0031b096bd3ad3e977e534153f29b7a590",
+      "customer_information.csv": "c4ad52ebca90e32bf3df5eb64f362b7a3437b77d978b22627cc46927fe7064af",
+      "close_prices.csv": "6ba1fe8390b31dfb3ab4e3e824910f9e8da4684cb6074cdb82eb6422a323656d"
+    },
+    "protocol_hashes": {
+      "dev_may": "399ca6ad738f507ac614c49091d81b5dc6f353324b63ae3e3518f0b321ded0a3",
+      "june_a": "96247b648a2c13348a0d944284102d1c2f3de21553450cb9d132abdb50493beb",
+      "june_b": "c0ad1659d14cb064e1cf52c7d2356628db2cda802fd6a84fe08c706aa4502d46"
+    },
+    "dev_users_disjoint_from_june": true,
+    "june_a_users_equals_june_b_users": true,
+    "june_a_b_candidate_membership_identical_for_all_users": true,
+    "june_a_b_source_ranks_rrf_and_baselines_unchanged": true,
+    "june_b_candidate_row_order_changed_for_all_users": true,
+    "june_a_memory_errors": 0,
+    "june_b_memory_errors": 0,
+    "a_b_raw_response_equal_count": 3,
+    "a_b_raw_response_different_count": 97,
+    "a_b_primary_top10_equal_count": 100,
+    "a_b_primary_top10_reason": "All raw outputs failed strict JSON parsing and fell back to RRF.",
+    "main_outputs_preserved_after_posthoc_analysis": true,
+    "new_clone_course_starter_path_check": true,
+    "pytorch_backend_runs_without_mlx_probe": true,
+    "tests_passing": 8
+  },
+  "posthoc_fence_removal_sensitivity_only": {
+    "model_calls": 0,
+    "primary_results_modified": false,
+    "validation_rules_changed": false,
+    "a_valid_after_fence_removal": 86,
+    "a_still_fallback": 14,
+    "a_qwen_fence_repaired_ndcg_at_10_all": 0.026641960795142635,
+    "a_qwen_fence_repaired_ndcg_at_10_nonempty": 0.24219964359220578,
+    "b_valid_after_fence_removal": 93,
+    "b_still_fallback": 7,
+    "b_qwen_fence_repaired_ndcg_at_10_all": 0.018237501695276416,
+    "b_qwen_fence_repaired_ndcg_at_10_nonempty": 0.16579546995705832,
+    "a_b_fence_repaired_top10_equal_count": 3,
+    "a_b_fence_repaired_mean_set_overlap": 2.89
+  },
+  "local_artifacts": {
+    "data_and_model_paths": "data/ (gitignored)",
+    "raw_responses_and_user_level_outputs": "session2/outputs/ (gitignored)",
+    "posthoc_outputs": "session2/outputs/posthoc_fence_repair/ (gitignored)"
+  }
+}
