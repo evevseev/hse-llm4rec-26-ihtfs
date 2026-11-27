@@ -1,0 +1,17 @@
+{
+  "llm_ranker_result_source": "https://raw.githubusercontent.com/dryjins/RecSys-LLMs/799e54c0493cf7e2b014152548ae5c18ee24a8f5/project/far-trans-llm/HW2_RESULTS.md",
+  "published_llmrank_with_fallback": {
+    "ndcg_at_10": 0.0201,
+    "ndcg_at_10_nonempty": 0.1827,
+    "fallbacks": 22
+  },
+  "published_llmrank_inference_rerun": false,
+  "local_cbf_order_first10": {
+    "users": 100,
+    "nonempty_truth_users": 11,
+    "empty_truth_users": 89,
+    "ndcg_at_10": 0.020100011736078574,
+    "ndcg_at_10_nonempty": 0.18272737941889614
+  },
+  "same_june_a_users_data_hashes_cutoff_and_end": true
+}

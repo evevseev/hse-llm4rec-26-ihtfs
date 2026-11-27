@@ -28,6 +28,12 @@ is claimed. Aggregate metrics and protocol settings are in `results/`.
 For a fresh clone, see the [Session 2 quickstart](session2/QUICKSTART.md). The
 June reproduction path is PyTorch-only and does not require MLX.
 
+Session 3 compares the saved June A run with a new JSON-constrained run on the
+same ordered candidate lists. See the [Session 3 quickstart](session3/README.md),
+[aggregate comparison](results/session3_summary.json),
+[independent checks](results/session3_independent_checks.json), and
+[provided Ranker reference check](results/session3_course_ranker.json).
+
 ## Materials
 
 - [Study plan and related work](session1/session1_plan_and_literature.md)

@@ -1,0 +1,192 @@
+{
+  "source_manifests": {
+    "june_a": {
+      "file": "session2/outputs/june_a/run_manifest.json",
+      "sha256": "ae8239d4dcfb66948c297193edf0205c256bbee74679639d701514dcb987aa78",
+      "split": "main_a",
+      "protocol_hash": "96247b648a2c13348a0d944284102d1c2f3de21553450cb9d132abdb50493beb",
+      "model": "Qwen/Qwen2.5-1.5B-Instruct",
+      "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "backend": null,
+      "device": null,
+      "dtype": null,
+      "constraint": null
+    },
+    "june_a_json_constrained": {
+      "file": "session3/outputs/june_a_json_constrained/run_manifest.json",
+      "sha256": "6c0b9228dea2f28fa88e65adf50d7f5dc7075742f618653c30144d796c724218",
+      "split": "main_a",
+      "protocol_hash": "96247b648a2c13348a0d944284102d1c2f3de21553450cb9d132abdb50493beb",
+      "model": "qwen2.5-1.5b-instruct",
+      "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+      "backend": "pytorch",
+      "device": "mps",
+      "dtype": "torch.float16",
+      "constraint": "lm-format-enforcer==0.11.3"
+    }
+  },
+  "source_protocol_hash": "96247b648a2c13348a0d944284102d1c2f3de21553450cb9d132abdb50493beb",
+  "prompt_template_sha256": "2b8db1e5d624a260798c27b407d379029ece8b1b9b4139b6653279dc0d46250b",
+  "users": 100,
+  "response_coverage": {
+    "june_a": 100,
+    "june_a_json_constrained": 100
+  },
+  "prompt_hash_verification": {
+    "all_full_prompt_hashes_match": true,
+    "all_branch_prompt_hashes_equal": true,
+    "verified_users": 100
+  },
+  "validation": {
+    "june_a": {
+      "responses": 100,
+      "raw_responses_present": 100,
+      "raw_responses_missing": 0,
+      "json_syntax_valid": 0,
+      "json_syntax_invalid": 100,
+      "validator_accepted_top10": 0,
+      "validator_fallbacks_by_reason": {
+        "invalid_json": 100
+      },
+      "wrappers_removed": 100,
+      "fence_stripped_json_syntax_valid": 100,
+      "fence_stripped_validator_accepted_top10": 86,
+      "fence_stripped_fallbacks_by_reason": {
+        "out_of_pool_alias": 5,
+        "invalid_count": 9
+      },
+      "model_call_failures": 0,
+      "model_call_failure_reasons": {},
+      "non_model_missing_output_fallbacks_by_reason": {},
+      "saved_rrf_fallback_decisions": 100,
+      "saved_decisions_checked": 100,
+      "validated_decisions_match_saved": 100
+    },
+    "june_a_json_constrained": {
+      "responses": 100,
+      "raw_responses_present": 100,
+      "raw_responses_missing": 0,
+      "json_syntax_valid": 100,
+      "json_syntax_invalid": 0,
+      "validator_accepted_top10": 89,
+      "validator_fallbacks_by_reason": {
+        "invalid_count": 6,
+        "out_of_pool_alias": 5
+      },
+      "wrappers_removed": 0,
+      "fence_stripped_json_syntax_valid": 100,
+      "fence_stripped_validator_accepted_top10": 89,
+      "fence_stripped_fallbacks_by_reason": {
+        "invalid_count": 6,
+        "out_of_pool_alias": 5
+      },
+      "model_call_failures": 0,
+      "model_call_failure_reasons": {},
+      "non_model_missing_output_fallbacks_by_reason": {},
+      "saved_rrf_fallback_decisions": 11,
+      "saved_decisions_checked": 100,
+      "validated_decisions_match_saved": 100
+    }
+  },
+  "timings_and_tokens": {
+    "june_a": {
+      "generation_seconds_total": 1138.7435373292537,
+      "generation_seconds_measured_calls": 100,
+      "model_load_seconds_total": null,
+      "model_load_seconds_last_process_snapshot": null,
+      "mask_preparation_seconds_total": null,
+      "input_tokens_total": 329159,
+      "input_tokens_mean": 3291.59,
+      "input_token_count": 100,
+      "output_tokens_total": 8181,
+      "output_tokens_mean": 81.81,
+      "output_token_count": 100,
+      "timing_note": "June A artifacts do not record cumulative model-load time; the unconstrained branch has no mask-preparation stage"
+    },
+    "june_a_json_constrained": {
+      "generation_seconds_total": 1122.4805357900914,
+      "generation_seconds_measured_calls": 100,
+      "model_load_seconds_total": 125.67740716773551,
+      "model_load_seconds_last_process_snapshot": null,
+      "mask_preparation_seconds_total": 40.22115087287966,
+      "input_tokens_total": 329159,
+      "input_tokens_mean": 3291.59,
+      "input_token_count": 100,
+      "output_tokens_total": 6690,
+      "output_tokens_mean": 66.9,
+      "output_token_count": 100,
+      "timing_note": null
+    }
+  },
+  "metrics": {
+    "popularity": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "ndcg_at_10": 0.028590012799467643,
+      "ndcg_at_10_nonempty": 0.25990920726788763
+    },
+    "cbf": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "ndcg_at_10": 0.020100011736078574,
+      "ndcg_at_10_nonempty": 0.18272737941889614
+    },
+    "latest_buy": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "ndcg_at_10": 0.027722649787649066,
+      "ndcg_at_10_nonempty": 0.2520240889786279
+    },
+    "latest_buy_or_sell": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "ndcg_at_10": 0.027107048693904026,
+      "ndcg_at_10_nonempty": 0.2464277153991275
+    },
+    "rrf": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "ndcg_at_10": 0.03553592418793942,
+      "ndcg_at_10_nonempty": 0.3230538562539947
+    },
+    "june_a": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "ndcg_at_10": 0.03553592418793942,
+      "ndcg_at_10_nonempty": 0.3230538562539947
+    },
+    "june_a_fence_stripped": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "ndcg_at_10": 0.026641960795142635,
+      "ndcg_at_10_nonempty": 0.24219964359220578
+    },
+    "june_a_json_constrained": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "ndcg_at_10": 0.013487312027285347,
+      "ndcg_at_10_nonempty": 0.12261192752077589
+    },
+    "prompt_order_top10": {
+      "users": 100,
+      "nonempty_truth_users": 11,
+      "empty_truth_users": 89,
+      "ndcg_at_10": 0.01122436817197618,
+      "ndcg_at_10_nonempty": 0.10203971065432892
+    }
+  },
+  "paired_top10": {
+    "june_a_equals_fence_stripped": 14,
+    "fence_stripped_equals_constrained": 62,
+    "mean_fence_stripped_constrained_set_overlap": 7.28,
+    "prompt_order_equals_rrf": 0
+  }
+}

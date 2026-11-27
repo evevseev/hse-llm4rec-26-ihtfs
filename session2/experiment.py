@@ -372,10 +372,13 @@ class Session1Generator:
         else:
             self.torch.mps.synchronize()
 
-    def generate(self, prompt: str, max_new_tokens: int = MAX_NEW_TOKENS) -> dict:
-        return self.generate_batch([prompt], max_new_tokens)[0]
+    def generate(self, prompt: str, max_new_tokens: int = MAX_NEW_TOKENS,
+                 prefix_allowed_tokens_fn=None) -> dict:
+        return self.generate_batch([prompt], max_new_tokens,
+                                   prefix_allowed_tokens_fn=prefix_allowed_tokens_fn)[0]
 
-    def generate_batch(self, prompts: list[str], max_new_tokens: int = MAX_NEW_TOKENS) -> list[dict]:
+    def generate_batch(self, prompts: list[str], max_new_tokens: int = MAX_NEW_TOKENS,
+                       prefix_allowed_tokens_fn=None) -> list[dict]:
         if not prompts:
             return []
         chat_texts = []
@@ -397,9 +400,13 @@ class Session1Generator:
         self._synchronize()
         started = time.perf_counter()
         with self.torch.inference_mode():
-            output = self.model.generate(
-                **inputs, max_new_tokens=max_new_tokens, do_sample=False, num_beams=1,
-                pad_token_id=self.tokenizer.eos_token_id)
+            generation_options = {
+                'max_new_tokens': max_new_tokens, 'do_sample': False, 'num_beams': 1,
+                'pad_token_id': self.tokenizer.eos_token_id,
+            }
+            if prefix_allowed_tokens_fn is not None:
+                generation_options['prefix_allowed_tokens_fn'] = prefix_allowed_tokens_fn
+            output = self.model.generate(**inputs, **generation_options)
         self._synchronize()
         batch_seconds = time.perf_counter() - started
         padded_width = inputs['input_ids'].shape[1]

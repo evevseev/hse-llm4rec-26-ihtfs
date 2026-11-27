@@ -1,0 +1,440 @@
+{
+  "cohort_size": 100,
+  "nonempty_users": 11,
+  "eligible_assets": 767,
+  "cutoff": "2021-06-01",
+  "label_end_exclusive": "2021-07-01",
+  "reference_protocol_sha256": "96247b648a2c13348a0d944284102d1c2f3de21553450cb9d132abdb50493beb",
+  "ordered_input_file_sha256": "1aa9655633365311a7d4bf34d17f8483613d29385c8ba6df972adbf324694d8e",
+  "labels_file_sha256": "f15698bb04a7e5d801be3081f7976dd4932b0422fad4c52e9e30ef7bc4ce9a91",
+  "unconstrained_responses_file_sha256": "0fdea9e20a77fddba450dec00b9dd90710c21326411401376fee8852ef1ef1ab",
+  "constrained_responses_file_sha256": "b7b1e538a7547c17ac47ded26273a29a76625a25eb7616d40c515e3860b0df88",
+  "per_prompt_hashes_checked": 100,
+  "model_input_token_count_matches": 100,
+  "scores": {
+    "popularity": {
+      "all": 0.02859001279946764,
+      "with_buys": 0.25990920726788763
+    },
+    "cbf": {
+      "all": 0.02010001173607857,
+      "with_buys": 0.1827273794188961
+    },
+    "latest_buy": {
+      "all": 0.027722649787649066,
+      "with_buys": 0.2520240889786279
+    },
+    "latest_buy_or_sell": {
+      "all": 0.027107048693904026,
+      "with_buys": 0.24642771539912753
+    },
+    "rrf": {
+      "all": 0.03553592418793942,
+      "with_buys": 0.3230538562539947
+    },
+    "input_order": {
+      "all": 0.011224368171976182,
+      "with_buys": 0.10203971065432892
+    },
+    "free": {
+      "all": 0.03553592418793942,
+      "with_buys": 0.3230538562539947
+    },
+    "free_unwrapped": {
+      "all": 0.026641960795142635,
+      "with_buys": 0.24219964359220578
+    },
+    "guided": {
+      "all": 0.013487312027285349,
+      "with_buys": 0.12261192752077589
+    },
+    "guided_unwrapped": {
+      "all": 0.013487312027285349,
+      "with_buys": 0.12261192752077589
+    }
+  },
+  "validation": {
+    "free": {
+      "invalid_json": 100
+    },
+    "free_unwrapped": {
+      "accepted": 86,
+      "out_of_pool_alias": 5,
+      "invalid_count": 9
+    },
+    "guided": {
+      "accepted": 89,
+      "invalid_count": 6,
+      "out_of_pool_alias": 5
+    },
+    "guided_unwrapped": {
+      "accepted": 89,
+      "invalid_count": 6,
+      "out_of_pool_alias": 5
+    }
+  },
+  "fences_removed": {
+    "free": 0,
+    "free_unwrapped": 100,
+    "guided": 0,
+    "guided_unwrapped": 0
+  },
+  "paired": {
+    "guided_differs_from_rrf_order": 89,
+    "guided_differs_from_unwrapped_order": 38,
+    "with_buys_guided_below_rrf": 6,
+    "with_buys_guided_equal_rrf": 4,
+    "with_buys_guided_above_rrf": 1
+  },
+  "guided_failure_examples": {
+    "invalid_count": {
+      "cohort_position": 3,
+      "output_tokens": 60,
+      "used_rrf": true,
+      "reported_alias_count": 9,
+      "out_of_pool_alias_count": 0
+    },
+    "out_of_pool_alias": {
+      "cohort_position": 7,
+      "output_tokens": 66,
+      "used_rrf": true,
+      "reported_alias_count": 10,
+      "out_of_pool_alias_count": 3
+    }
+  },
+  "mean_candidate_recall_with_buys": 0.6818181818181818,
+  "users_with_buys_cases": [
+    {
+      "cohort_position": 30,
+      "relevant_count": 2,
+      "relevant_in_pool": 2,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [
+            1,
+            8
+          ],
+          "dcg": 1.3154648767857289,
+          "idcg": 1.6309297535714575,
+          "ndcg": 0.8065735963827293
+        },
+        "free_unwrapped": {
+          "hit_ranks": [
+            1
+          ],
+          "dcg": 1.0,
+          "idcg": 1.6309297535714575,
+          "ndcg": 0.6131471927654584
+        },
+        "guided": {
+          "hit_ranks": [
+            1
+          ],
+          "dcg": 1.0,
+          "idcg": 1.6309297535714575,
+          "ndcg": 0.6131471927654584
+        }
+      }
+    },
+    {
+      "cohort_position": 31,
+      "relevant_count": 1,
+      "relevant_in_pool": 1,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [
+            4
+          ],
+          "dcg": 0.43067655807339306,
+          "idcg": 1.0,
+          "ndcg": 0.43067655807339306
+        },
+        "free_unwrapped": {
+          "hit_ranks": [
+            5
+          ],
+          "dcg": 0.38685280723454163,
+          "idcg": 1.0,
+          "ndcg": 0.38685280723454163
+        },
+        "guided": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    {
+      "cohort_position": 39,
+      "relevant_count": 1,
+      "relevant_in_pool": 1,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [
+            2
+          ],
+          "dcg": 0.6309297535714575,
+          "idcg": 1.0,
+          "ndcg": 0.6309297535714575
+        },
+        "free_unwrapped": {
+          "hit_ranks": [
+            8
+          ],
+          "dcg": 0.31546487678572877,
+          "idcg": 1.0,
+          "ndcg": 0.31546487678572877
+        },
+        "guided": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    {
+      "cohort_position": 45,
+      "relevant_count": 6,
+      "relevant_in_pool": 6,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [
+            4,
+            6,
+            9
+          ],
+          "dcg": 1.0879137408453965,
+          "idcg": 3.304666305987414,
+          "ndcg": 0.3292053236583397
+        },
+        "free_unwrapped": {
+          "hit_ranks": [
+            4
+          ],
+          "dcg": 0.43067655807339306,
+          "idcg": 3.304666305987414,
+          "ndcg": 0.13032376591037065
+        },
+        "guided": {
+          "hit_ranks": [
+            4
+          ],
+          "dcg": 0.43067655807339306,
+          "idcg": 3.304666305987414,
+          "ndcg": 0.13032376591037065
+        }
+      }
+    },
+    {
+      "cohort_position": 47,
+      "relevant_count": 1,
+      "relevant_in_pool": 1,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        },
+        "free_unwrapped": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        },
+        "guided": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    {
+      "cohort_position": 48,
+      "relevant_count": 1,
+      "relevant_in_pool": 0,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        },
+        "free_unwrapped": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        },
+        "guided": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    {
+      "cohort_position": 49,
+      "relevant_count": 1,
+      "relevant_in_pool": 0,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        },
+        "free_unwrapped": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        },
+        "guided": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    {
+      "cohort_position": 56,
+      "relevant_count": 1,
+      "relevant_in_pool": 1,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [
+            6
+          ],
+          "dcg": 0.3562071871080222,
+          "idcg": 1.0,
+          "ndcg": 0.3562071871080222
+        },
+        "free_unwrapped": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        },
+        "guided": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    {
+      "cohort_position": 69,
+      "relevant_count": 1,
+      "relevant_in_pool": 1,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [
+            1
+          ],
+          "dcg": 1.0,
+          "idcg": 1.0,
+          "ndcg": 1.0
+        },
+        "free_unwrapped": {
+          "hit_ranks": [
+            1
+          ],
+          "dcg": 1.0,
+          "idcg": 1.0,
+          "ndcg": 1.0
+        },
+        "guided": {
+          "hit_ranks": [
+            5
+          ],
+          "dcg": 0.38685280723454163,
+          "idcg": 1.0,
+          "ndcg": 0.38685280723454163
+        }
+      }
+    },
+    {
+      "cohort_position": 72,
+      "relevant_count": 1,
+      "relevant_in_pool": 0,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        },
+        "free_unwrapped": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        },
+        "guided": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.0,
+          "ndcg": 0.0
+        }
+      }
+    },
+    {
+      "cohort_position": 94,
+      "relevant_count": 2,
+      "relevant_in_pool": 1,
+      "guided_failure": null,
+      "same_guided_and_rrf_top10": false,
+      "scores": {
+        "rrf": {
+          "hit_ranks": [],
+          "dcg": 0,
+          "idcg": 1.6309297535714575,
+          "ndcg": 0.0
+        },
+        "free_unwrapped": {
+          "hit_ranks": [
+            6
+          ],
+          "dcg": 0.3562071871080222,
+          "idcg": 1.6309297535714575,
+          "ndcg": 0.21840743681816419
+        },
+        "guided": {
+          "hit_ranks": [
+            6
+          ],
+          "dcg": 0.3562071871080222,
+          "idcg": 1.6309297535714575,
+          "ndcg": 0.21840743681816419
+        }
+      }
+    }
+  ]
+}
